@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1536</width>
+    <height>820</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton_close">
+    <property name="geometry">
+     <rect>
+      <x>1485</x>
+      <y>0</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>11</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: red;  /* Задаем цвет фона */
+    font: 11pt &quot;Segoe UI&quot;;
+    color: white;  /* Задаем цвет текста */
+    border: 1px solid white;  /* Задаем толщину и цвет границы */
+    border-radius: 7px;  /* Закругляем углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
+}
+
+QPushButton:hover {
+    background-color: rgb(184, 0, 3)  /* Цвет фона при наведении */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
+    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
+}
+
+QPushButton:pressed {
+    background-color: rgb(154, 1, 3);  /* Цвет фона при нажатии */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
+    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
+}</string>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>341</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>         Ввод простого числа P:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_choose_p">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>241</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_show_new_p">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50;  /* Задаем цвет фона */
+    font: 11pt &quot;Segoe UI&quot;;
+    color: white;  /* Задаем цвет текста */
+    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
+    border-radius: 7px;  /* Закругляем углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
+}
+
+QPushButton:hover {
+    background-color: #45a049;  /* Цвет фона при наведении */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
+    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
+}
+
+QPushButton:pressed {
+    background-color: #39803d;  /* Цвет фона при нажатии */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
+    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
+}</string>
+    </property>
+    <property name="text">
+     <string>Показать 10000 следующих</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_choose_p">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>120</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50;  /* Задаем цвет фона */
+    font: 11pt &quot;Segoe UI&quot;;
+    color: white;  /* Задаем цвет текста */
+    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
+    border-radius: 7px;  /* Закругляем углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
+}
+
+QPushButton:hover {
+    background-color: #45a049;  /* Цвет фона при наведении */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
+    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
+}
+
+QPushButton:pressed {
+    background-color: #39803d;  /* Цвет фона при нажатии */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
+    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
+}</string>
+    </property>
+    <property name="text">
+     <string>Выбрать</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_p">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="minimum">
+     <number>2</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>0</y>
+      <width>261</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Первообразные корни по
+модулю P - значения G:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_choose_g">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>70</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>20</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ввод X:</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_x">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>70</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="minimum">
+     <number>2</number>
+    </property>
+    <property name="maximum">
+     <number>2147483647</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_confirm">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>20</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50;  /* Задаем цвет фона */
+    font: 14pt &quot;Segoe UI&quot;;
+    color: white;  /* Задаем цвет текста */
+    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
+    border-radius: 7px;  /* Закругляем углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
+}
+
+QPushButton:hover {
+    background-color: #45a049;  /* Цвет фона при наведении */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
+    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
+}
+
+QPushButton:pressed {
+    background-color: #39803d;  /* Цвет фона при нажатии */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
+    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
+}</string>
+    </property>
+    <property name="text">
+     <string>Подтвердить</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>70</y>
+      <width>291</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Открытый ключ Ko - (P, G, Y):</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Ko">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>70</y>
+      <width>291</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_K">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>100</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>110</y>
+      <width>261</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Возможные значения K:</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_text_of_cypher">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>1211</width>
+      <height>341</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>431</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Текст файла в десятичном представлении:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_encypher">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>620</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>13</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50;  /* Задаем цвет фона */
+    font: 13pt &quot;Segoe UI&quot;;
+    color: white;  /* Задаем цвет текста */
+    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
+    border-radius: 7px;  /* Закругляем углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
+}
+
+QPushButton:hover {
+    background-color: #45a049;  /* Цвет фона при наведении */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
+    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
+}
+
+QPushButton:pressed {
+    background-color: #39803d;  /* Цвет фона при нажатии */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
+    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
+}</string>
+    </property>
+    <property name="text">
+     <string>Зашифровать</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_decypher">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>620</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50;  /* Задаем цвет фона */
+    font: 13pt &quot;Segoe UI&quot;;
+    color: white;  /* Задаем цвет текста */
+    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
+    border-radius: 7px;  /* Закругляем углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
+}
+
+QPushButton:hover {
+    background-color: #45a049;  /* Цвет фона при наведении */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
+    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
+}
+
+QPushButton:pressed {
+    background-color: #39803d;  /* Цвет фона при нажатии */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
+    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
+}</string>
+    </property>
+    <property name="text">
+     <string>Расшифровать</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_choose_file">
+    <property name="geometry">
+     <rect>
+      <x>1320</x>
+      <y>260</y>
+      <width>171</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #4CAF50;  /* Задаем цвет фона */
+    font: 12pt &quot;Segoe UI&quot;;
+    color: white;  /* Задаем цвет текста */
+    border: 1px solid rgb(154, 255, 143);  /* Задаем толщину и цвет границы */
+    border-radius: 7px;  /* Закругляем углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Добавляем тень */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;  /* Добавляем плавные переходы */
+}
+
+QPushButton:hover {
+    background-color: #45a049;  /* Цвет фона при наведении */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);  /* Увеличиваем тень при наведении */
+    transform: translateY(-2px);  /* Поднимаем кнопку на 2 пикселя */
+}
+
+QPushButton:pressed {
+    background-color: #39803d;  /* Цвет фона при нажатии */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);  /* Уменьшаем тень при нажатии */
+    transform: translateY(2px);  /* Поднимаем кнопку на 2 пикселя при нажатии */
+}</string>
+    </property>
+    <property name="text">
+     <string>Выбрать файл</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_show_all">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>180</y>
+      <width>451</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Показывать все значения для параметров</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>625</y>
+      <width>501</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1536</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
