@@ -262,7 +262,7 @@ void MainWindow::on_pushButton_encypher_clicked()
         for (int i = 0; i < file_text.size(); i++) {
             QString str = "";
             ull K = v_K.at( get_random_int(0, v_K.size() - 1) );
-            ull M = file_text.at(i) + 127;
+            ull M = file_text.at(i) + 128;
             ull A = _pow_mod(G, K, P);
             ull B = ( (ull)_pow_mod(Y, K, P) * M ) % P;
             for (int j = 4; j >= 0; j--) {
@@ -340,7 +340,7 @@ void MainWindow::on_pushButton_decypher_clicked()
             count++;
         }
         ull M = ( (ull)_pow_mod( A, P - 1 - X, P) * B ) % P;
-        decypher.append(M - 127);
+        decypher.append(M - 128);
         pr_bar_value += s_pt_stp;
         ui->progressBar->setValue(pr_bar_value / size * 100);
     }
