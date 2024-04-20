@@ -61,8 +61,8 @@ QPushButton:pressed {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>0</y>
+      <x>780</x>
+      <y>40</y>
       <width>341</width>
       <height>61</height>
      </rect>
@@ -80,8 +80,8 @@ QPushButton:pressed {
    <widget class="QComboBox" name="comboBox_choose_p">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>120</y>
+      <x>780</x>
+      <y>160</y>
       <width>241</width>
       <height>41</height>
      </rect>
@@ -99,8 +99,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_show_new_p">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>170</y>
+      <x>780</x>
+      <y>210</y>
       <width>351</width>
       <height>41</height>
      </rect>
@@ -132,14 +132,14 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>Показать 10000 следующих</string>
+     <string>Показать 100 тыс. следующих</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_choose_p">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>120</y>
+      <x>1030</x>
+      <y>160</y>
       <width>101</width>
       <height>41</height>
      </rect>
@@ -177,8 +177,8 @@ QPushButton:pressed {
    <widget class="QSpinBox" name="spinBox_p">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>70</y>
+      <x>780</x>
+      <y>110</y>
       <width>351</width>
       <height>41</height>
      </rect>
@@ -199,8 +199,8 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>0</y>
+      <x>1150</x>
+      <y>40</y>
       <width>261</width>
       <height>61</height>
      </rect>
@@ -219,8 +219,8 @@ QPushButton:pressed {
    <widget class="QComboBox" name="comboBox_choose_g">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>70</y>
+      <x>1150</x>
+      <y>110</y>
       <width>261</width>
       <height>41</height>
      </rect>
@@ -238,9 +238,9 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>20</y>
-      <width>81</width>
+      <x>1180</x>
+      <y>170</y>
+      <width>191</width>
       <height>31</height>
      </rect>
     </property>
@@ -251,15 +251,15 @@ QPushButton:pressed {
      </font>
     </property>
     <property name="text">
-     <string>Ввод X:</string>
+     <string>Ввод секретного X:</string>
     </property>
    </widget>
    <widget class="QSpinBox" name="spinBox_x">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>70</y>
-      <width>111</width>
+      <x>1150</x>
+      <y>210</y>
+      <width>261</width>
       <height>41</height>
      </rect>
     </property>
@@ -279,10 +279,10 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_confirm">
     <property name="geometry">
      <rect>
-      <x>900</x>
-      <y>20</y>
-      <width>261</width>
-      <height>41</height>
+      <x>780</x>
+      <y>340</y>
+      <width>231</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -326,8 +326,8 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>810</x>
-      <y>70</y>
+      <x>780</x>
+      <y>410</y>
       <width>291</width>
       <height>31</height>
      </rect>
@@ -345,9 +345,9 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_Ko">
     <property name="geometry">
      <rect>
-      <x>1110</x>
-      <y>70</y>
-      <width>291</width>
+      <x>1080</x>
+      <y>410</y>
+      <width>411</width>
       <height>31</height>
      </rect>
     </property>
@@ -364,9 +364,9 @@ QPushButton:pressed {
    <widget class="QComboBox" name="comboBox_K">
     <property name="geometry">
      <rect>
-      <x>1110</x>
-      <y>100</y>
-      <width>121</width>
+      <x>1080</x>
+      <y>440</y>
+      <width>241</width>
       <height>41</height>
      </rect>
     </property>
@@ -383,8 +383,8 @@ QPushButton:pressed {
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>810</x>
-      <y>110</y>
+      <x>780</x>
+      <y>450</y>
       <width>261</width>
       <height>31</height>
      </rect>
@@ -402,18 +402,24 @@ QPushButton:pressed {
    <widget class="QTextEdit" name="textEdit_text_of_cypher">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>260</y>
-      <width>1211</width>
+      <x>30</x>
+      <y>50</y>
+      <width>531</width>
       <height>341</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>220</y>
+      <x>30</x>
+      <y>10</y>
       <width>431</width>
       <height>31</height>
      </rect>
@@ -431,8 +437,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_encypher">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>620</y>
+      <x>30</x>
+      <y>410</y>
       <width>261</width>
       <height>41</height>
      </rect>
@@ -478,8 +484,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_decypher">
     <property name="geometry">
      <rect>
-      <x>970</x>
-      <y>620</y>
+      <x>300</x>
+      <y>410</y>
       <width>261</width>
       <height>41</height>
      </rect>
@@ -517,8 +523,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="pushButton_choose_file">
     <property name="geometry">
      <rect>
-      <x>1320</x>
-      <y>260</y>
+      <x>580</x>
+      <y>50</y>
       <width>171</width>
       <height>51</height>
      </rect>
@@ -561,8 +567,8 @@ QPushButton:pressed {
    <widget class="QRadioButton" name="radioButton_show_all">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>180</y>
+      <x>780</x>
+      <y>500</y>
       <width>451</width>
       <height>26</height>
      </rect>
@@ -583,9 +589,9 @@ QPushButton:pressed {
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>625</y>
-      <width>501</width>
+      <x>30</x>
+      <y>470</y>
+      <width>531</width>
       <height>31</height>
      </rect>
     </property>
@@ -597,6 +603,25 @@ QPushButton:pressed {
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_file_path">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>10</y>
+      <width>891</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

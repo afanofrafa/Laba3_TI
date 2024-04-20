@@ -133,6 +133,10 @@ MainWindow::MainWindow(QWidget *parent)
     on_pushButton_show_new_p_clicked();
     ui->progressBar->setVisible(false);
     ui->progressBar->setEnabled(false);
+    ui->pushButton_choose_file->setEnabled(false);
+    ui->pushButton_decypher->setEnabled(false);
+    ui->pushButton_encypher->setEnabled(false);
+    ui->label_file_path->setText("");
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -151,7 +155,7 @@ void MainWindow::on_pushButton_show_new_p_clicked()
 {
     ull it = 0;
     if (last_primitive + 1 < INT_MAX)
-        for (ull i = last_primitive; it == 0 || it % 10000 != 0; i++) {
+        for (ull i = last_primitive; it == 0 || it % 100000 != 0; i++) {
             if (fermat_test(i, 40)) {
                 QString str = QString::number(ui->comboBox_choose_p->count() + 1) + ": " + QString::number(i);
                 ui->comboBox_choose_p->addItem(str);
@@ -212,6 +216,24 @@ void MainWindow::on_pushButton_confirm_clicked()
         QString str = "(";
         ull p = ui->spinBox_p->value();
         P = p;
+        v_K.clear();
+        bool fl = true;
+        for (ull i = 2; i < P; i++) {
+            if (gcd(i, p - 1) == 1) {
+                if (ui->radioButton_show_all->isChecked() || fl) {
+                    ui->comboBox_K->addItem(QString::number(i));
+                    fl = false;
+                }
+                v_K.push_back(i);
+            }
+        }
+        if (v_K.size() == 0) {
+            ui->label_Ko->setText("");
+            ui->pushButton_choose_file->setEnabled(false);
+            ui->pushButton_decypher->setEnabled(false);
+            ui->pushButton_encypher->setEnabled(false);
+            return;
+        }
         str += QString::number(p) + ", ";
         QString g = ui->comboBox_choose_g->currentText();
         for (int i = 0; i < g.size(); i++) {
@@ -229,17 +251,15 @@ void MainWindow::on_pushButton_confirm_clicked()
         Y = y;
         str += QString::number(y) + ")";
         ui->label_Ko->setText(str);
-        v_K.clear();
-        for (int i = 2; i < P; i++)
-            if (gcd(i, p - 1) == 1) {
-                ui->comboBox_K->addItem(QString::number(i));
-                v_K.push_back(i);
-                if (!ui->radioButton_show_all->isChecked())
-                    break;
-            }
+        ui->pushButton_choose_file->setEnabled(true);
+        ui->pushButton_decypher->setEnabled(true);
+        ui->pushButton_encypher->setEnabled(true);
     }
     else {
         ui->label_Ko->setText("");
+        ui->pushButton_choose_file->setEnabled(false);
+        ui->pushButton_decypher->setEnabled(false);
+        ui->pushButton_encypher->setEnabled(false);
     }
 }
 
@@ -294,6 +314,7 @@ void MainWindow::on_pushButton_choose_file_clicked()
 {
     filePath = QFileDialog::getOpenFileName(this, "Выберите файл", "C:/Users/Archie/Documents/ТИ_файлы_лаба2", "Все файлы (*.*)");
     if (filePath.isEmpty()) {
+        ui->label_file_path->setText("");
         QMessageBox::warning(this, "Предупреждение", "Файл не выбран.");
         return;
     }
@@ -303,8 +324,22 @@ void MainWindow::on_pushButton_choose_file_clicked()
         QMessageBox::critical(this, "Ошибка", "Не удалось открыть файл для чтения.");
         return;
     }
+    ui->label_file_path->setText("Текущий путь к файлу: " + filePath);
     file_text = file.readAll(); // Чтение всех байтов файла в QByteArray
+    float pr_bar_value = 0;
+    ull size = (ull)(file_text.size());
+    ui->textEdit_text_of_cypher->clear();
+    ui->progressBar->setVisible(true);
+    ui->progressBar->setEnabled(true);
+    for (int i = 0; i < file_text.size(); i++) {
+        ui->textEdit_text_of_cypher->append(QString::number(file_text.at(i) + 128));
+        pr_bar_value++;
+        ui->progressBar->setValue(pr_bar_value / size * 100);
+    }
     file.close();
+    ui->progressBar->setVisible(false);
+    ui->progressBar->setValue(0);
+    ui->progressBar->setEnabled(false);
 }
 
 
@@ -315,15 +350,16 @@ void MainWindow::on_pushButton_decypher_clicked()
         QMessageBox::critical(this, "Ошибка", "Не удалось создать файл для чтения и записи.");
         return;
     }
-    //file_text = file.readAll();
+    file_text = file.readAll();
     float pr_bar_value = 0;
-    ull size = (ull)(file.size() / 10);
+    ull size = (ull)(file_text.size() / 10);
     float s_pt_stp = 1.0 * 90.0 / 100.0;
     file.resize(0);
     file.seek(0);
     QByteArray decypher;
     ui->progressBar->setVisible(true);
     ui->progressBar->setEnabled(true);
+    ui->textEdit_text_of_cypher->clear();
     for (int i = 0; i < file_text.size() - 9; i += 10) {
         ull A = 0;
         ull B = 0;
@@ -341,6 +377,7 @@ void MainWindow::on_pushButton_decypher_clicked()
         }
         ull M = ( (ull)_pow_mod( A, P - 1 - X, P) * B ) % P;
         decypher.append(M - 128);
+        ui->textEdit_text_of_cypher->append(QString::number(M));
         pr_bar_value += s_pt_stp;
         ui->progressBar->setValue(pr_bar_value / size * 100);
     }
